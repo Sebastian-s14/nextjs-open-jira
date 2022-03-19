@@ -20,7 +20,7 @@ const ENTRIES_INITIAL_STATE: EntriesState = {
             _id: uuidv4(),
             description: 'example description 2',
             createdAt: Date.now() - 1000000,
-            status: ' in-progress',
+            status: 'in-progress',
         },
         {
             _id: uuidv4(),
@@ -43,11 +43,16 @@ export const EntriesProvider: React.FC = ({ children }) => {
         }
         dispatch({ type: '[ENTRIES] - Add Entry', payload: newEntry })
     }
+
+    const updateEntry = (entry: Entry) =>
+        dispatch({ type: '[ENTRIES] - Entry-Updated', payload: entry })
+
     return (
         <EntriesContext.Provider
             value={{
                 ...state,
                 addNewEntry,
+                updateEntry,
             }}>
             {children}
         </EntriesContext.Provider>
