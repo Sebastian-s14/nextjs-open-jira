@@ -9,26 +9,7 @@ export interface EntriesState {
 }
 
 const ENTRIES_INITIAL_STATE: EntriesState = {
-    entries: [
-        {
-            _id: uuidv4(),
-            description: 'example description',
-            createdAt: Date.now(),
-            status: 'pending',
-        },
-        {
-            _id: uuidv4(),
-            description: 'example description 2',
-            createdAt: Date.now() - 1000000,
-            status: 'in-progress',
-        },
-        {
-            _id: uuidv4(),
-            description: 'example description 3',
-            createdAt: Date.now() - 100000,
-            status: 'finished',
-        },
-    ],
+    entries: [],
 }
 
 export const EntriesProvider: React.FC = ({ children }) => {
