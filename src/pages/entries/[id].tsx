@@ -57,7 +57,7 @@ const EntryPage: NextPage<EntrypageProps> = ({ entry }) => {
             status,
             description: inputValue,
         }
-        updateEntry(updatedEntry)
+        updateEntry(updatedEntry, true)
     }
 
     return (
